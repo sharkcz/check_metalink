@@ -74,6 +74,7 @@ VERBOSE_INFO = 2
 VERBOSE_DEBUG = 3
 
 import sys
+import traceback
 import argparse
 import xml.etree.ElementTree as ET
 import hashlib
@@ -392,6 +393,8 @@ def _main():
             except Exception as ex:
                 if args.verbose >= VERBOSE_ERROR:
                     print('Repo %s, arch %s errored: %s' % (repo, arch, ex))
+                    if args.verbose >= VERBOSE_DEBUG:
+                        print(traceback.format_exc())
                 results_exception['%s.%s' % (repo, arch)] = ex
 
     if not args.no_overview:
