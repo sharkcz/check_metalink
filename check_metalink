@@ -36,7 +36,7 @@ def get_repos_arches():
     This needs regular updates!
     """
     types = ['', '-debug', '-source']
-    versions = ['30', '31']
+    versions = ['30', '31', '32']
     per_version = [
                    'fedora%s-%s',
                    'updates-released%s-f%s',
