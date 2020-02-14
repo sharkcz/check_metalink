@@ -49,9 +49,9 @@ def get_repos_arches():
     no_version = [
              'rawhide%s',
              'rawhide-modular%s',
-             'epel%s-5',
              'epel%s-6',
-             'epel%s-7'
+             'epel%s-7',
+             'epel%s-8'
             ]
     repos = []
 
