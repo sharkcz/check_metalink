@@ -219,7 +219,12 @@ def _check_metalink(repo, arch, verbosity, check_files, check_mirrors,
         print('Testing repo=%s, arch=%s' % (repo, arch))
 
     mlbaseurl = 'https://mirrors.fedoraproject.org/metalink?repo=%s' + \
-                '&arch=%s&country=global'
+                '&arch=%s'
+
+    if check_mirrors:
+        mlbaseurl += "&country=global"
+    else:
+        mlbaseurl += "&country=US"
 
     mlurl = mlbaseurl % (repo, arch)
 
